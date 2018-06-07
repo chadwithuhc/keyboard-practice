@@ -1,0 +1,34 @@
+#game {
+  max-width: 1000px;
+  margin: 100vh auto;
+}
+
+kbd, .kbd {
+  display: inline-block;
+  border: solid 0.1em grey;
+  border-radius: 0.1em;
+  padding: 0.1em 0.5em;
+  font-size: 1em;
+  line-height: 1.4em;
+  font-family: monospace;
+}
+
+.hero-body {
+  margin: auto 0;
+}
+
+.textarea {
+  font-family: monospace;
+}
+
+fieldset {
+  border: 0;
+}
+
+#click-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
