@@ -1,6 +1,6 @@
 # Keyboard Practice
 
-> Practice common keyboard shortcuts when programming
+> Practice common keyboard shortcuts and refactors when programming with JavaScript
 
 ## Game Time
 
