@@ -12,19 +12,23 @@
   }
 
   function createChallenge(challenge) {
+    const lines = Math.max(
+      countLines(challenge.start),
+      countLines(challenge.end)
+    )
     const $container = document.createElement('article')
     $container.className = 'hero content is-fullheight'
     $container.innerHTML = `
       <div className="hero-body">
         <div className="container">
           <form class="columns">
-            <fieldset class="column content">
+            <fieldset class="column">
               <h1>${challenge.title}</h1>
               ${markdown(challenge.description)}
             </fieldset>
-            <fieldset class="column">
-              <textarea class="textarea">${challenge.start}</textarea>
+            <fieldset class="column ${challenge.width || ''}">
               <pre>${challenge.end}</pre>
+              <textarea class="textarea" rows="${lines - 1}" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">${challenge.start}</textarea>
             </fieldset>
           </form>
         </div>
@@ -47,6 +51,10 @@
 
   function markdown(content) {
     return converter.makeHtml(content)
+  }
+
+  function countLines(text) {
+    return (text.match(/\n/g) || []).length
   }
 
   function disableClick() {
